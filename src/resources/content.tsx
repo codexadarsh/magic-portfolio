@@ -1,50 +1,59 @@
-import { About, Blog, Gallery, Home, Newsletter, Person, Social, Work } from "@/types";
+import {
+  About,
+  Blog,
+  Gallery,
+  Home,
+  Newsletter,
+  Person,
+  Social,
+  Work,
+} from "@/types";
 import { Line, Row, Text } from "@once-ui-system/core";
 
 const person: Person = {
-  firstName: "Selene",
-  lastName: "Yu",
-  name: `Selene Yu`,
-  role: "Design Engineer",
+  firstName: "Adarsh",
+  lastName: "Maurya",
+  name: "Adarsh Maurya",
+  role: "Full-stack MERN Developer",
   avatar: "/images/avatar.jpg",
-  email: "example@gmail.com",
-  location: "Asia/Jakarta", // Expecting the IANA time zone identifier, e.g., 'Europe/Vienna'
-  languages: ["English", "Bahasa"], // optional: Leave the array empty if you don't want to display languages
+  email: "mauryaadarsh793@gmail.com",
+  // Keep this as a valid IANA time zone identifier for features that depend on it
+  location: "Asia/Kolkata",
+  // Shown on the site – added Marathi from your resume
+  languages: ["English", "Hindi", "Marathi"],
 };
 
 const newsletter: Newsletter = {
-  display: true,
+  display: false,
   title: <>Subscribe to {person.firstName}'s Newsletter</>,
-  description: <>My weekly newsletter about creativity and engineering</>,
+  description: (
+    <>
+      A practical newsletter on React, MERN, performance and real-world web
+      apps.
+    </>
+  ),
 };
 
 const social: Social = [
-  // Links are automatically displayed.
-  // Import new icons in /once-ui/icons.ts
-  // Set essentials: true for links you want to show on the about page
   {
     name: "GitHub",
     icon: "github",
-    link: "https://github.com/once-ui-system",
+    link: "https://github.com/codexadarsh", // from your GitHub repo slug
     essential: true,
   },
   {
     name: "LinkedIn",
     icon: "linkedin",
-    link: "https://www.linkedin.com/company/once-ui/",
+    // TODO: replace with your actual LinkedIn profile URL
+    link: "https://www.linkedin.com/in/codexadarsh",
     essential: true,
   },
   {
-    name: "Instagram",
-    icon: "instagram",
-    link: "https://www.instagram.com/once_ui/",
+    name: "X",
+    icon: "x", // make sure this icon exists in /once-ui/icons.ts
+    // TODO: replace with your real X/Twitter URL
+    link: "https://x.com/codexadarsh",
     essential: false,
-  },
-  {
-    name: "Threads",
-    icon: "threads",
-    link: "https://www.threads.com/@once_ui",
-    essential: true,
   },
   {
     name: "Email",
@@ -60,24 +69,30 @@ const home: Home = {
   label: "Home",
   title: `${person.name}'s Portfolio`,
   description: `Portfolio website showcasing my work as a ${person.role}`,
-  headline: <>Building bridges between design and code</>,
+  headline: <>Building fast, clean and reliable web experiences</>,
   featured: {
     display: true,
     title: (
       <Row gap="12" vertical="center">
-        <strong className="ml-4">Once UI</strong>{" "}
+        <strong className="ml-4">Movie Discovery</strong>{" "}
         <Line background="brand-alpha-strong" vert height="20" />
         <Text marginRight="4" onBackground="brand-medium">
-          Featured work
+          Featured project
         </Text>
       </Row>
     ),
-    href: "/work/building-once-ui-a-customizable-design-system",
+    // Make sure you have a matching MDX page for this slug
+    href: "/work/movie",
   },
   subline: (
     <>
-    I'm Selene, a design engineer at <Text as="span" size="xl" weight="strong">ONCE UI</Text>, where I craft intuitive <br /> user experiences. After hours, I build my own projects.
-</>
+      I'm Adarsh, a full-stack MERN developer and Shopify/React intern at{" "}
+      <Text as="span" size="xl" weight="strong">
+        PulseX Media
+      </Text>
+      , building scalable systems and modern React apps. After hours, I ship my
+      own projects and refine my craft.
+    </>
   ),
 };
 
@@ -85,69 +100,70 @@ const about: About = {
   path: "/about",
   label: "About",
   title: `About – ${person.name}`,
-  description: `Meet ${person.name}, ${person.role} from ${person.location}`,
+  // Don’t use person.location here because it’s a time zone ID
+  description: `Meet ${person.name}, a ${person.role} based in Mumbai, India`,
   tableOfContent: {
     display: true,
     subItems: false,
   },
   avatar: {
-    display: true,
+    display: false,
   },
   calendar: {
-    display: true,
-    link: "https://cal.com",
+    display: false,
+    // TODO: replace with your real Cal.com or other booking link
+    link: "https://cal.com/adarshmaurya",
   },
   intro: {
     display: true,
     title: "Introduction",
     description: (
       <>
-        Selene is a Jakarta-based design engineer with a passion for transforming complex challenges
-        into simple, elegant design solutions. Her work spans digital interfaces, interactive
-        experiences, and the convergence of design and technology.
+        Adarsh is a Mumbai-based full-stack MERN developer focused on building
+        scalable systems, optimized backends, and modern React applications. He
+        cares about clean architecture, performance, and shipping
+        production-ready products that solve real-world problems.
       </>
     ),
   },
   work: {
-    display: true, // set to false to hide this section
+    display: true,
     title: "Work Experience",
     experiences: [
       {
-        company: "FLY",
-        timeframe: "2022 - Present",
-        role: "Senior Design Engineer",
+        company: "PulseX Media Solutions LLP",
+        timeframe: "July 2025 – Sept 2025",
+        role: "Shopify & React Web Development Intern",
         achievements: [
-          <>
-            Redesigned the UI/UX for the FLY platform, resulting in a 20% increase in user
-            engagement and 30% faster load times.
-          </>,
-          <>
-            Spearheaded the integration of AI tools into design workflows, enabling designers to
-            iterate 50% faster.
-          </>,
+          "Built custom Shopify sections and React components, improving client storefront performance and UX.",
+          "Implemented optimizations like lazy loading, memoization, and reusable UI components to enhance navigation speed.",
+          "Collaborated with designers and backend teams to ship responsive, high-performing e-commerce features.",
         ],
         images: [
-          // optional: leave the array empty if you don't want to display images
           {
             src: "/images/projects/project-01/cover-01.jpg",
-            alt: "Once UI Project",
+            alt: "PulseX Media storefront UI",
             width: 16,
             height: 9,
           },
         ],
       },
       {
-        company: "Creativ3",
-        timeframe: "2018 - 2022",
-        role: "Lead Designer",
+        company: "Personal Projects",
+        timeframe: "2024 – Present",
+        role: "Full-stack MERN Developer",
         achievements: [
           <>
-            Developed a design system that unified the brand across multiple platforms, improving
-            design consistency by 40%.
+            Built <strong>Movie Discovery</strong>, a React app with debounced
+            search, infinite scroll and mood-based recommendations.
           </>,
           <>
-            Led a cross-functional team to launch a new product line, contributing to a 15% increase
-            in overall company revenue.
+            Created a <strong>Password Manager</strong> with secure password
+            generation, strength indicators and a clean UI.
+          </>,
+          <>
+            Developed a <strong>MERN Job Portal</strong> with full CRUD for jobs
+            and applications using React, Node.js, Express and MongoDB.
           </>,
         ],
         images: [],
@@ -155,74 +171,68 @@ const about: About = {
     ],
   },
   studies: {
-    display: true, // set to false to hide this section
-    title: "Studies",
+    display: true,
+    title: "Education",
     institutions: [
       {
-        name: "University of Jakarta",
-        description: <>Studied software engineering.</>,
+        name: "University of Mumbai",
+        description: (
+          <>Bachelor of Computer Science (July 2023 – April 2026).</>
+        ),
       },
       {
-        name: "Build the Future",
-        description: <>Studied online marketing and personal branding.</>,
+        name: "Maharashtra State Board",
+        description: (
+          <>Higher Secondary Education (July 2021 – March 2023), Mumbai.</>
+        ),
       },
     ],
   },
   technical: {
-    display: true, // set to false to hide this section
+    display: true,
     title: "Technical skills",
     skills: [
       {
-        title: "Figma",
+        title: "Frontend",
         description: (
-          <>Able to prototype in Figma with Once UI with unnatural speed.</>
+          <>
+            Building modern interfaces with React, Next.js, Tailwind CSS and
+            TypeScript, focused on performance and DX.
+          </>
         ),
         tags: [
-          {
-            name: "Figma",
-            icon: "figma",
-          },
+          { name: "React", icon: "react" },
+          { name: "Next.js", icon: "nextjs" },
+          { name: "Tailwind CSS", icon: "tailwind" },
+          { name: "TypeScript", icon: "typescript" },
         ],
-        // optional: leave the array empty if you don't want to display images
         images: [
           {
             src: "/images/projects/project-01/cover-02.jpg",
-            alt: "Project image",
-            width: 16,
-            height: 9,
-          },
-          {
-            src: "/images/projects/project-01/cover-03.jpg",
-            alt: "Project image",
+            alt: "Frontend project UI",
             width: 16,
             height: 9,
           },
         ],
       },
       {
-        title: "Next.js",
+        title: "Backend & Databases",
         description: (
-          <>Building next gen apps with Next.js + Once UI + Supabase.</>
+          <>
+            Building APIs and scalable backends with Node.js, Express, MongoDB
+            and Supabase, deployed on Vercel/Netlify.
+          </>
         ),
         tags: [
-          {
-            name: "JavaScript",
-            icon: "javascript",
-          },
-          {
-            name: "Next.js",
-            icon: "nextjs",
-          },
-          {
-            name: "Supabase",
-            icon: "supabase",
-          },
+          { name: "Node.js", icon: "nodejs" },
+          { name: "Express", icon: "express" },
+          { name: "MongoDB", icon: "mongodb" },
+          { name: "Supabase", icon: "supabase" },
         ],
-        // optional: leave the array empty if you don't want to display images
         images: [
           {
-            src: "/images/projects/project-01/cover-04.jpg",
-            alt: "Project image",
+            src: "/images/projects/project-01/cover-03.jpg",
+            alt: "Backend and API architecture",
             width: 16,
             height: 9,
           },
@@ -235,19 +245,15 @@ const about: About = {
 const blog: Blog = {
   path: "/blog",
   label: "Blog",
-  title: "Writing about design and tech...",
-  description: `Read what ${person.name} has been up to recently`,
-  // Create new blog posts by adding a new .mdx file to app/blog/posts
-  // All posts will be listed on the /blog route
+  title: "Writing about React, MERN and web performance...",
+  description: `Read what ${person.name} has been building and learning recently`,
 };
 
 const work: Work = {
   path: "/work",
   label: "Work",
   title: `Projects – ${person.name}`,
-  description: `Design and dev projects by ${person.name}`,
-  // Create new project pages by adding a new .mdx file to app/blog/posts
-  // All projects will be listed on the /home and /work routes
+  description: `Full-stack and frontend projects by ${person.name}`,
 };
 
 const gallery: Gallery = {
@@ -255,8 +261,6 @@ const gallery: Gallery = {
   label: "Gallery",
   title: `Photo gallery – ${person.name}`,
   description: `A photo collection by ${person.name}`,
-  // Images by https://lorant.one
-  // These are placeholder images, replace with your own
   images: [
     {
       src: "/images/gallery/horizontal-1.jpg",

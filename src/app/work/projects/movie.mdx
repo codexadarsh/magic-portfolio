@@ -1,0 +1,66 @@
+---
+title: "Movie Discovery — A Fast, Search-Optimized React App"
+publishedAt: "2024-04-12"
+summary: "A movie discovery web app with instant search, debouncing, infinite scroll, and dynamic recommendations built with React and modern UI patterns."
+images:
+  - "/images/projects/project-01/cover-01.jpg"
+  - "/images/projects/project-01/cover-02.jpg"
+  - "/images/projects/project-01/cover-03.jpg"
+team:
+  - name: "Adarsh Maurya"
+    role: "Frontend Engineer"
+    avatar: "/images/avatar.jpg"
+    linkedIn: "https://www.linkedin.com/in/adarsh-maurya"
+link: "https://moviediscovery.vercel.app/"
+---
+
+## Overview
+
+The Movie Discovery App is a frontend-focused project built to explore modern React patterns for data fetching, search performance, and UI responsiveness. The goal was to create a fast, minimal interface where users can search for movies, explore details, and scroll through results without hitting bottlenecks or slow re-renders.
+
+This project also served as a playground for improving user experience: subtle animations, skeleton loaders, debounced search, infinite scrolling, and clean component composition.
+
+## Key Features
+
+- **Live Movie Search (with Debouncing)**  
+  The search input uses a debounced fetch so the API isn't spammed on every keystroke. Fast, responsive, and efficient.
+
+- **Infinite Scroll**  
+  As users scroll, new results load automatically—no pagination buttons, no reloads. Smooth and uninterrupted discovery.
+
+- **Movie Detail Pages**  
+  Every movie includes detailed info: rating, description, cast, release year, and poster images.
+
+- **Mood-Based Recommendations**  
+  A simple but effective recommendation engine that filters based on user-selected moods (action, chill, dramatic, etc.).
+
+- **Responsive UI Built from Scratch**  
+  No heavy UI libraries. Just clean components, controlled states, and modern layout techniques.
+
+## Technologies Used
+
+- **React** – Component-based UI with hooks for managing state and fetching.
+- **TMDB API** (or compatible API) – For movie data including images and metadata.
+- **CSS / Tailwind (if used)** – Fast styling, custom layouts, and responsive pages.
+- **Vercel** – For deploying the production build quickly and efficiently.
+
+## Challenges and Learnings
+
+- **Preventing Over-Fetching**  
+  Without debouncing, the API was getting hit multiple times per second. Fixing this taught me to handle real-world API efficiency concerns.
+
+- **Managing State Without Over-Engineering**  
+  Instead of reaching for Redux or Zustand immediately, I learned how far React’s built-in tools can go when structured cleanly.
+
+- **Image Performance**  
+  Large poster images can choke a feed. Optimizing image loading and using responsive sizes made a noticeable difference.
+
+- **Cleaning Up Side-Effects**  
+  Race conditions in async search calls were causing flickers until I implemented proper cancellation/guards.
+
+## Outcome
+
+The final app is fast, lightweight, and genuinely enjoyable to use. Search feels instant, scrolling is seamless, and the UI stays consistent across devices.
+
+More importantly, this project demonstrates strong frontend fundamentals:  
+clean state management, API integration, performance-first thinking, and UI polish without unnecessary complexity.

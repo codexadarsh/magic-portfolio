@@ -1,0 +1,66 @@
+---
+title: "Building a MERN Job Portal for Managing Jobs & Applications"
+publishedAt: "2024-04-01"
+summary: "A MERN-stack job portal with full CRUD for jobs and applications, built with React, Node.js, Express and MongoDB."
+images:
+  - "/images/projects/project-01/cover-02.jpg"
+  - "/images/projects/project-01/image-03.jpg"
+team:
+  - name: "Adarsh Maurya"
+    role: "Full-stack MERN Developer"
+    avatar: "/images/avatar.jpg"
+    linkedIn: "https://www.linkedin.com/in/adarsh-maurya"
+link: "https://reactportal.vercel.app/"
+---
+
+## Overview
+
+This project is a full-stack job portal built with the MERN stack. The goal was simple and practical: create a system where users can create, read, update and delete jobs and applications, using a clean API layer and a responsive React frontend.
+
+I treated it like a real product: separate concerns between frontend and backend, design a clear data model for jobs and applications, and make the UI fast and easy to work with for both job posters and candidates. The project also serves as a solid reference for how I structure full-stack apps from scratch.
+
+## Key Features
+
+- **Job Management (CRUD)**  
+  Create, list, update and delete job postings with fields like title, company, location, salary range and description.
+
+- **Application Management (CRUD)**  
+  For each job, manage applications with candidate details and status updates, using the same RESTful patterns as the jobs module.
+
+- **Structured API Layer**  
+  A Node.js + Express backend that exposes clear routes for jobs and applications, with proper request validation and error handling.
+
+- **Responsive UI**  
+  A React-based frontend with reusable components for forms, lists and detail views, designed to work well on both desktop and mobile.
+
+- **State Management & Data Fetching**  
+  Clean separation between UI and data fetching using hooks, making it easier to extend or replace parts of the app later.
+
+## Technologies Used
+
+- **React** – For building the component-based frontend and handling state and routing.
+- **Node.js & Express.js** – For creating the REST API, routing and middleware.
+- **MongoDB** – For storing jobs and applications with flexible schemas.
+- **Mongoose** – For defining models and handling database operations.
+- **Git & GitHub** – For version control and project collaboration.
+- **Vercel** – For deploying the frontend (and optionally the backend, if configured as serverless functions).
+
+## Challenges and Learnings
+
+The main challenge was designing the data model and API in a way that stays simple but doesn’t paint me into a corner later.
+
+- **Data modeling**: I had to decide how to link jobs and applications (referencing vs embedding), and ended up with a structure that keeps relations clear while still being easy to query.
+- **Error handling**: Building proper error responses (validation errors, not found, server errors) forced me to think through edge cases instead of assuming “happy path” flows.
+- **API and UI alignment**: Any backend change (field names, response structure) immediately affected the frontend. This pushed me to define contracts up front and stick to them.
+
+These constraints made the project feel closer to real-world work than just a simple CRUD demo.
+
+## Outcome
+
+The job portal delivers a complete flow for managing jobs and applications end to end:
+
+- Recruiter-style users can create and manage job listings.
+- Application data is stored and retrievable via a consistent API.
+- The frontend remains readable and maintainable, with clear separation between UI and data logic.
+
+More importantly, this project shows how I approach full-stack work: start from the data model and API design, build a clean React UI on top of it, and keep the whole thing deployable and easy to extend.
